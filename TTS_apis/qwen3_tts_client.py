@@ -25,7 +25,7 @@ from qwen_tts import Qwen3TTSModel
 #
 class Qwen3TTSClient:
     model = Qwen3TTSModel.from_pretrained(
-        "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+        "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
         device_map="cuda:0",
         dtype=torch.bfloat16,
         # attn_implementation="flash_attention_2",
