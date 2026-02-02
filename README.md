@@ -1,3 +1,31 @@
+# 한국어를 위한 설정.
+
+setup.py를 실행하여 초기 설정을 마친 후 한국어 사용을 위해서 다음 사항을 설정한다.
+
+한국어 관련 기능 개선을 위해서 config.py에서 다음 변수를 수정한다.
+- WHISPER_MODEL = "large-v3-turbo" # 기본값 tiny.en은 한국어 음성 인식율이 저조함.
+- TTS_ENGINE="qwen3" # Qwen3 TTS를 사용하여 자연스러운 한국어 발음.
+
+Qwen3-TTS를 사용하려면 TTS_apis\qwen3_tts_client.py에 나와있는 설명대로 추가 설치 작업을 해 줘야 한다.
+
+오프라인 로컬 LLM을 사용하려면 config.py에서 'LM Studio'/Ollama/TabbyAPI 관련 주석 처리된 부분을 활성화 시켜서 다음 변수를 수정한다.
+- COMPLETIONS_API
+- COMPLETION_MODEL
+- (LM_STUDIO/OLLAMA/TABBY)_API_BASE_URL
+
+GPU 가속을 활성화 하려면 준비물을 설치한 후 config.py에서 다음 변수 수정.
+- USE_GPU = True
+- 준비물 설치방법은 이 문서 Setup - GPU Acceleration 에 나온다.
+- CUDA 12.8/cuDNN8.9 에서 정상 동작 확인됨.
+
+run_AlwaysReddy.bat로 실행하면 된다.
+사용법은 이 문서의 How to use AlwaysReddy 항목을 참고한다.
+
+PyTorch가 CPU-only버전으로 설치되었다면 다음과 같은 에러가 발생한다.
+AssertionError: Torch not compiled with CUDA enabled
+다음 링크를 참조하여 CUDA 버전의 Pytorch를 설치한다.
+https://pytorch.org/get-started/locally/
+
 # Welcome to AlwaysReddy 🔊
 Hey, I'm Josh, the creator of AlwaysReddy. I am still a little bit of a noob when it comes to programming and I'm really trying to develop my skills over the next year, I'm treating this project as an attempt to better develop my skills, with that in mind I would really appreciate it if you could point out issues and bad practices in my code (of which I'm sure there will be plenty). I would also appreciate if you would make your own improvements to the project so I can learn from your changes. Twitter: https://twitter.com/MindofMachine1
 

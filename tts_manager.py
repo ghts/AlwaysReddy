@@ -38,6 +38,9 @@ class TTSManager:
         elif self.service == "mac":
             from TTS_apis.mac_tts_client import MacTTSClient
             self.tts_client = MacTTSClient(verbose=self.verbose)
+        elif self.service == "qwen3":
+            from TTS_apis.qwen3_tts_client import Qwen3TTSClient
+            self.tts_client = Qwen3TTSClient(verbose=self.verbose)
         else:
             raise ValueError("Unsupported TTS engine configured")
 
