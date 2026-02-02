@@ -4,7 +4,7 @@ setup.py를 실행하여 초기 설정을 마친 후 한국어 사용을 위해�
 
 한국어 관련 기능 개선을 위해서 config.py에서 다음 변수를 수정한다.
 - WHISPER_MODEL = "large-v3" # 기본값 tiny.en에 비해서 한국어 음성 인식 능력이 크게 개선됨.
-- TTS_ENGINE="supertonic2" # 기본 로컬 TTS인 Piper TTS보다 한국어 발음이 자연스러움.
+- TTS_ENGINE="supertonic2" # 기본 로컬 TTS인 Piper TTS보다 한국어 발음이 자연스러움. <br>
   (Qwen3-TTS를 사용하려면 TTS_ENGINE="qwen3"로 설정한다.)
 
 Supertonic2-TTS를 사용하려면 supertonic 패키지를 설치해야 한다.
