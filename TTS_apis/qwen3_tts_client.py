@@ -2,7 +2,7 @@ import torch
 import soundfile as sf
 from qwen_tts import Qwen3TTSModel
 
-# https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice
+# https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice
 #
 # 1. Qwen3-TTS는 sox가 필요하다.
 #    다음 링크에서 sox 14.4.2를 다운로드 받는다.
