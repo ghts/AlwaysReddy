@@ -31,17 +31,20 @@ AlwaysReddy\venv\Scripts\activate.bat를 실행하여 가상 환경 안에서 �
 - (LM_STUDIO/OLLAMA/TABBY)_API_BASE_URL
 
 5. GPU 가속을 활성화 
-이 문서 Setup - GPU Acceleration에 나온 준비물을 설치한 후 config.py에서 USE_GPU 값을 수정한다.
-- USE_GPU = True
-  (파이썬 3.12/CUDA 12.8/cuDNN8.9 에서 GPU 가속 작동 확인됨)
+이 문서 Setup - GPU Acceleration에 나온 준비물을 설치한 후 config.py에서 USE_GPU 값을 True로 변경한다.
+- USE_GPU = True<br>
+  (파이썬 3.12/CUDA 12.8/cuDNN8.9 에서 GPU 가속 작동 확인됨)<br><br>
 
-시작은 'run_AlwaysReddy.bat'을 실행하면 된다.
-사용법은 이 문서의 How to use AlwaysReddy 항목을 참고한다.
+  PyTorch가 CPU-only버전으로 설치되었다면 다음과 같은 에러가 발생한다.<br>
+  AssertionError: Torch not compiled with CUDA enabled<br>
+  다음 링크를 참조하여 CUDA 버전의 Pytorch를 설치한다.<br>
+  https://pytorch.org/get-started/locally/
 
-PyTorch가 CPU-only버전으로 설치되었다면 다음과 같은 에러가 발생한다.
-AssertionError: Torch not compiled with CUDA enabled
-다음 링크를 참조하여 CUDA 버전의 Pytorch를 설치한다.
-https://pytorch.org/get-started/locally/
+# 초간단 사용법.
+실행 시작은 'run_AlwaysReddy.bat'<br>
+녹음 시작/종료 단축키의 기본값은 'alt+ctrl+r'<br>
+녹음을 시작할 때, 'alt+ctrl+r'를 누른 후, 녹음을 종료할 때, 'alt+ctrl+r'을 한 번 더 누르면 된다.<br>
+더 자세한 사용법은 이 문서의 How to use AlwaysReddy 항목을 참고한다.
 
 # Welcome to AlwaysReddy 🔊
 Hey, I'm Josh, the creator of AlwaysReddy. I am still a little bit of a noob when it comes to programming and I'm really trying to develop my skills over the next year, I'm treating this project as an attempt to better develop my skills, with that in mind I would really appreciate it if you could point out issues and bad practices in my code (of which I'm sure there will be plenty). I would also appreciate if you would make your own improvements to the project so I can learn from your changes. Twitter: https://twitter.com/MindofMachine1
