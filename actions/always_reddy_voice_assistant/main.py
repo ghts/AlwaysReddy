@@ -36,8 +36,14 @@ class AlwaysReddyVoiceAssistant(BaseAction):
                 config.RECORD_HOTKEY,
                 pressed=self.handle_default_assistant_response,
                 held_release=self.handle_default_assistant_response,
-                double_tap=self.AR.save_clipboard_text,
+                # double_tap=self.AR.save_clipboard_text,
             )
+
+            self.AR.add_action_hotkey(
+                'alt+ctrl+v',
+                pressed=self.AR.save_clipboard_text,
+            )
+
             print(
                 f"'{config.RECORD_HOTKEY}': Start/stop talking to voice assistant (press to toggle on and off, or hold and release)"
             )
