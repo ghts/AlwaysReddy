@@ -24,16 +24,18 @@ from qwen_tts import Qwen3TTSModel
 #  https://pytorch.org/get-started/locally/)
 #
 class Qwen3TTSClient:
-    model = Qwen3TTSModel.from_pretrained(
-        "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
-        device_map="cuda:0",
-        dtype=torch.bfloat16,
-        # attn_implementation="flash_attention_2",
-    )
-
+    model = None
     def __init__(self, verbose=False):
         """Initialize the Qwen3 TTS client."""
         self.verbose = verbose
+
+        if Qwen3TTSClient.model is None:
+            Qwen3TTSClient.model = Qwen3TTSModel.from_pretrained(
+                "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+                device_map="cuda:0",
+                dtype=torch.bfloat16,
+                # attn_implementation="flash_attention_2",
+            )
 
     def tts(self, text_to_speak, output_file):
         """
