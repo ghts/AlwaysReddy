@@ -3,21 +3,26 @@
 setup.py를 실행하여 초기 설정을 마친 후 한국어 사용을 위해서 다음 사항을 설정한다.
 
 한국어 관련 기능 개선을 위해서 config.py에서 다음 변수를 수정한다.
-- WHISPER_MODEL = "large-v3-turbo" # 기본값 tiny.en보다 한국어 음성 인식율이 많이 개선됨.
-- TTS_ENGINE="qwen3" # 기본 로컬 TTS인 Piper TTS보다 한국어 발음이 자연스러움.
+- WHISPER_MODEL = "large-v3" # 기본값 tiny.en에 비해서 한국어 음성 인식 능력이 크게 개선됨.
+- TTS_ENGINE="supertonic2" # 기본 로컬 TTS인 Piper TTS보다 한국어 발음이 자연스러움.
+  (Qwen3-TTS를 사용하려면 TTS_ENGINE="qwen3"로 설정한다.)
 
-Qwen3-TTS를 사용하려면 TTS_apis\qwen3_tts_client.py에 나와있는 설명대로 추가 설치 작업을 해 줘야 한다.
+Supertonic2-TTS를 사용하려면 supertonic 패키지를 설치해야 한다.
+AlwaysReddy\venv\Scripts\activate.bat를 실행하여 가상 환경 안에서 다음 명령어를 실행한다.
+> pip install supertonic
 
-'LM Studio'/Ollama/TabbyAPI등의 로컬 LLM 플랫폼을 사용하려면 config.py에서 주석 처리된 관련 내용을 활성화 시켜서 다음 변수를 수정한다.
+Qwen3-TTS를 사용하려면 TTS_apis\qwen3_tts_client.py 주석에 나온 설명대로 추가 설치 작업을 한다.
+
+로컬 LLM 플랫폼('LM Studio'/Ollama/TabbyAPI)을 사용하려면 config.py에서 주석 처리된 관련 내용을 활성화 시켜서 다음 변수값을 설정한다.
 - COMPLETIONS_API
 - COMPLETION_MODEL
 - (LM_STUDIO/OLLAMA/TABBY)_API_BASE_URL
 
-GPU 가속을 활성화 하려면 이 문서 Setup - GPU Acceleration 에 나온 준비물을 설치한 후 config.py에서 USE_GPU 값을 수정한다.
+GPU 가속을 활성화 하려면 이 문서 Setup - GPU Acceleration에 나온 준비물을 설치한 후 config.py에서 USE_GPU 값을 수정한다.
 - USE_GPU = True
-- CUDA 12.8/cuDNN8.9 에서 정상 동작 확인됨.
+  (CUDA 12.8/cuDNN8.9 에서 정상 동작 확인됨)
 
-run_AlwaysReddy.bat로 실행하면 된다.
+시작은 'run_AlwaysReddy.bat'을 실행하면 된다.
 사용법은 이 문서의 How to use AlwaysReddy 항목을 참고한다.
 
 PyTorch가 CPU-only버전으로 설치되었다면 다음과 같은 에러가 발생한다.

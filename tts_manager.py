@@ -41,6 +41,9 @@ class TTSManager:
         elif self.service == "qwen3":
             from TTS_apis.qwen3_tts_client import Qwen3TTSClient
             self.tts_client = Qwen3TTSClient(verbose=self.verbose)
+        elif self.service == "supertonic2":
+            from TTS_apis.supertonic2_tts_client import Supertonic2TTSClient
+            self.tts_client = Supertonic2TTSClient(verbose=self.verbose)
         else:
             raise ValueError("Unsupported TTS engine configured")
 
