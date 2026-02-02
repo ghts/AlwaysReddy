@@ -91,7 +91,7 @@ BEAM_SIZE = 5
 ## OPENAI Hosted Transcription ###
 # TRANSCRIPTION_API = "openai" # this will use the hosted openai api
 
-TTS_ENGINE="qwen3"
+TTS_ENGINE="supertonic2"
 
 ### Piper TTS SETTINGS ###
 # TTS_ENGINE="piper"
