@@ -36,12 +36,7 @@ class AlwaysReddyVoiceAssistant(BaseAction):
                 config.RECORD_HOTKEY,
                 pressed=self.handle_default_assistant_response,
                 held_release=self.handle_default_assistant_response,
-                # double_tap=self.AR.save_clipboard_text,
-            )
-
-            self.AR.add_action_hotkey(
-                'alt+ctrl+v',
-                pressed=self.AR.save_clipboard_text,
+                double_tap=self.AR.save_clipboard_text,
             )
 
             print(
