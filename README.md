@@ -3,19 +3,18 @@
 setup.py를 실행하여 초기 설정을 마친 후 한국어 사용을 위해서 다음 사항을 설정한다.
 
 한국어 관련 기능 개선을 위해서 config.py에서 다음 변수를 수정한다.
-- WHISPER_MODEL = "large-v3-turbo" # 기본값 tiny.en은 한국어 음성 인식율이 저조함.
-- TTS_ENGINE="qwen3" # Qwen3 TTS를 사용하여 자연스러운 한국어 발음.
+- WHISPER_MODEL = "large-v3-turbo" # 기본값 tiny.en보다 한국어 음성 인식율이 많이 개선됨.
+- TTS_ENGINE="qwen3" # 기본 로컬 TTS인 Piper TTS보다 한국어 발음이 자연스러움.
 
 Qwen3-TTS를 사용하려면 TTS_apis\qwen3_tts_client.py에 나와있는 설명대로 추가 설치 작업을 해 줘야 한다.
 
-오프라인 로컬 LLM을 사용하려면 config.py에서 'LM Studio'/Ollama/TabbyAPI 관련 주석 처리된 부분을 활성화 시켜서 다음 변수를 수정한다.
+'LM Studio'/Ollama/TabbyAPI등의 로컬 LLM 플랫폼을 사용하려면 config.py에서 주석 처리된 관련 내용을 활성화 시켜서 다음 변수를 수정한다.
 - COMPLETIONS_API
 - COMPLETION_MODEL
 - (LM_STUDIO/OLLAMA/TABBY)_API_BASE_URL
 
-GPU 가속을 활성화 하려면 준비물을 설치한 후 config.py에서 다음 변수 수정.
+GPU 가속을 활성화 하려면 이 문서 Setup - GPU Acceleration 에 나온 준비물을 설치한 후 config.py에서 USE_GPU 값을 수정한다.
 - USE_GPU = True
-- 준비물 설치방법은 이 문서 Setup - GPU Acceleration 에 나온다.
 - CUDA 12.8/cuDNN8.9 에서 정상 동작 확인됨.
 
 run_AlwaysReddy.bat로 실행하면 된다.
